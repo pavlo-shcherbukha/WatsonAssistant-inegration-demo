@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "clientId": {
+    "searchPatterns": [
+      "env:clientId",
+      "file:/localdev-config.json:$.clientId"
+    ]
+  },
+  "tenantId": {
+    "searchPatterns": [
+      "env:tenantId",
+      "file:/localdev-config.json:$.tenantId"
+    ]
+  },
+  "secret": {
+    "searchPatterns": [
+      "env:secret",
+      "file:/localdev-config.json:$.secret"
+    ]
+  },
+  "name": {
+    "searchPatterns": [
+      "env:name",
+      "file:/localdev-config.json:$.name"
+    ]
+  },
+  "oAuthServerUrl": {
+    "searchPatterns": [
+      "env:oAuthServerUrl",
+      "file:/localdev-config.json:$.oAuthServerUrl"
+    ]
+  },
+  "profilesUrl": {
+    "searchPatterns": [
+      "env:profilesUrl",
+      "file:/localdev-config.json:$.profilesUrl"
+    ]
+  },
+  "discoveryEndpoint": {
+    "searchPatterns": [
+      "env:discoveryEndpoint",
+      "file:/localdev-config.json:$.discoveryEndpoint"
+    ]
+  },
+  "type": {
+    "searchPatterns": [
+      "env:type",
+      "file:/localdev-config.json:$.type"
+    ]
+  },
+
+  "redirectUri": {
+    "searchPatterns": [
+      "env:redirectUri",
+      "file:/localdev-config.json:$.redirectUri"
+    ]
+  }
+
+}

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="ibm-cloud-app-id-%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9-%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD-%D0%B4%D0%BB%D1%8F-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8-%D1%87%D0%B0%D1%82%D0%B1%D0%BE%D1%82%D0%BE%D0%BC">IBM Cloud App ID (доработанный шаблон) для аутентификации чатботом.</h1>
+<h2 id="%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">Назначение приложения</h2>
+<p>Обработка аутентификации</p>
+<p><code>app.js</code>  Uses Express - роутеры .</p>
+<p><code>public/index.html</code>  Стартовая страница прилоения.</p>
+<p><code>protected/protected.html</code>  - Защищенные ресурсы.</p>
+<h2 id="%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8">Настройки</h2>
+<p>Настройки  описаны в файле ./mappings.json</p>
+<h2 id="%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE">Запуск локально</h2>
+<p>В корневом каталоге положить файл с настройками:
+localdev-config.json</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-attr">"clientId"</span>: <span class="hljs-string">"&lt;clientId&gt;"</span>,
+  <span class="hljs-attr">"tenantId"</span>: <span class="hljs-string">"tenantId"</span>,
+  <span class="hljs-attr">"secret"</span>: <span class="hljs-string">"&lt;secret&gt;"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"node-app"</span>,
+  <span class="hljs-attr">"oAuthServerUrl"</span>: <span class="hljs-string">"https://"</span>,
+  <span class="hljs-attr">"profilesUrl"</span>: <span class="hljs-string">"https://"</span>,
+  <span class="hljs-attr">"discoveryEndpoint"</span>: <span class="hljs-string">"https://"</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"regularwebapp"</span>,
+  <span class="hljs-attr">"scopes"</span>: [],
+  <span class="hljs-attr">"redirectUri"</span>: <span class="hljs-string">"http://"</span>
+}
+</div></code></pre>
+<p>Запустить команду:</p>
+<pre class="hljs"><code><div>npm install
+npm start
+</div></code></pre>
+<p>Вход в приложение через browser http://localhost:8080 .</p>
+<h2 id="%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D0%B2-cloud-foundry">Запуск в Cloud Foundry</h2>
+<p>ЗАполнить env переменные и парметры application в manifest.yml</p>
+<h3 id="deployment">Deployment</h3>
+<p><strong>Важно:</strong> Для запуска  удалить http://localhost:8080/* со списка web redirect URLs, что &quot;Manage Authentication&quot; -&gt; &quot;Authentication Settings&quot;  вкладке AppID dashboard.</p>
+<ol>
+<li>Login to IBM Cloud.</li>
+</ol>
+<p><code>ibmcloud login -a https://api.{{domain}}</code></p>
+<ol start="2">
+<li>Target a Cloud Foundry organization and space in which you have at least Developer role access:</li>
+</ol>
+<p>Use <code>ibmcloud target --cf</code> to target Cloud Foundry org/space interactively.</p>
+<ol start="3">
+<li>Bind the sample app to the instance of App ID:</li>
+</ol>
+<p><code>ibmcloud resource service-alias-create &quot;appIDInstanceName-alias&quot; --instance-name &quot;appIDInstanceName&quot; -s {{space}}</code></p>
+<ol start="4">
+<li>
+<p>Add the alias to the manifest.yml file in the sample app.</p>
+</li>
+<li>
+<p>Deploy the sample application to IBM Cloud. From the app's folder do:</p>
+</li>
+</ol>
+<p><code>ibmcloud app push</code></p>
+<ol start="6">
+<li>
+<p>Добавить новый redirect URL в App ID dashboard.  Для этого, в вашем App ID instance зайти в Manage Authentication-&gt;Authentication Settings-&gt;Add web redirect URLs  и добавить новый URL:</p>
+<p><code>https://{App Domain}/ibm/cloud/appid/callback</code></p>
+<p>You find your app's domain by visiting Cloud Foundry Apps at the IBM Cloud dashboard: https://cloud.ibm.com/resources.</p>
+</li>
+<li>
+<p>Open your IBM Cloud app route in the browser.</p>
+</li>
+</ol>
+<h2 id="running-in-kubernetes">Running in Kubernetes</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Before you begin make sure that IBM Cloud CLI, docker and kubectl installed and that you have a running kubernetes cluster.
+You also need an IBM Cloud container registry namespace (see https://cloud.ibm.com/kubernetes/registry/main/start). You can find your registry domain and repository namespace using <code>ibmcloud cr namespaces</code>.</p>
+<h3 id="deployment">Deployment</h3>
+<p><strong>Important:</strong> Before going live, remove http://localhost:3000/* from the list of web redirect URLs located in &quot;Manage Authentication&quot; -&gt; &quot;Authentication Settings&quot; page in the AppID dashboard.</p>
+<p><strong>Note:</strong> Your App ID instance name must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character. You can visit the App ID dashboard to change your instance name.</p>
+<ol>
+<li>
+<p>Login to IBM Cloud.</p>
+<p><code>ibmcloud login -a https://api.{{domain}}</code></p>
+</li>
+<li>
+<p>Run the following command, it will output an export command.</p>
+<p><code>ibmcloud cs cluster-config {CLUSTER_NAME}</code></p>
+</li>
+<li>
+<p>Set the KUBECONFIG environment variable. Copy the output from the previous command and paste it in your terminal. The command output looks similar to the following example:</p>
+<p><code>export KUBECONFIG=/Users/$USER/.bluemix/plugins/container-service/clusters/mycluster/kube-config-hou02-mycluster.yml</code></p>
+</li>
+<li>
+<p>Bind the instance of App ID to your cluster.</p>
+<p><code>ibmcloud cs cluster-service-bind {CLUSTER_NAME} default {APP_ID_INSTANCE_NAME}</code></p>
+</li>
+<li>
+<p>Find your cluster's public endpoint {CLUSTER_ENDPOINT}.</p>
+<p>Note: If you are using the free version of kubernetes (with only 1 worker node) you can use your node's public IP instead, which you can find using:</p>
+<p><code>ibmcloud cs workers {CLUSTER_NAME}</code></p>
+</li>
+<li>
+<p>Edit the kube_deployment.yml file.</p>
+<ol>
+<li>Edit the image field of the deployment section to match your image name. The name of your image should be <code>{REGISTRY_DOMAIN}/{REPOSITORY_NAMESPACE}/appid-node-sample:{APP_VERSION}</code>).</li>
+<li>Edit the Binding name field to match yours. It should be <code>binding-{APP_ID_INSTANCE_NAME}</code>.</li>
+<li>Edit redirectUri's value to include your cluster's IP. The value should be <code>http://{CLUSTER_ENDPOINT}/ibm/cloud/appid/callback</code></li>
+<li>Optional: Change the value of metadata.namespace from default to your cluster namespace if you’re using a different namespace.</li>
+</ol>
+</li>
+<li>
+<p>Build your Docker image.</p>
+<p><code>docker build -t {REGISTRY_DOMAIN}/{REPOSITORY_NAMESPACE}/appid-node-sample:{APP_VERSION} .</code></p>
+</li>
+<li>
+<p>Push the image.</p>
+<p><code>docker push {REGISTRY_DOMAIN}/{REPOSITORY_NAMESPACE}/appid-node-sample:{APP_VERSION}</code></p>
+<p><code>kubectl apply -f kube_deployment.yml</code></p>
+</li>
+<li>
+<p>Now configure the OAuth redirect URL at the App ID dashboard so it will approve redirecting to your cluster. Go to your App ID instance at <a href="https://cloud.ibm.com/resources">IBM Cloud console</a> and under Manage Authentication-&gt;Authentication Settings-&gt;Add web redirect URLs add the following URL:</p>
+<p><code>https://{CLUSTER_ENDPOINT}:30000/ibm/cloud/appid/callback</code></p>
+</li>
+<li>
+<p>You can see your sample running on Kubernetes in IBM Cloud.</p>
+<p><code>open http://{CLUSTER_ENDPOINT}:30000</code></p>
+</li>
+</ol>
+<h2 id="clarification">Clarification</h2>
+<p>This sample runs on one instance and uses the session to store the authorization data.
+In order to run it in production mode, use services such as Redis to store the relevant data.</p>
+<h2 id="%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B5-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%8B">Полезные ресуры</h2>
+<h4 id="protecting-nodejs-web-applications-with-ibm-cloud-app-id">Protecting Node.js Web Applications with IBM Cloud App ID</h4>
+<p>https://www.youtube.com/watch?v=6roa1ZOvwtw</p>
+<hr>
+<h2 id="httpseu-gbappidcloudibmcomoauthv4c321f792-f62c-42d5-8537-d311f3f69db4authorizationclientidca1b7c1b-4f16-4927-9723-3227a7211f27responsetypecoderedirecturihttplocalhost8080ibmcloudappidcallbackscopeappiddefaultlanguageen-usstatedsy7vvm73gdwhjhiuoffsycjk3clanguageen-us">https://eu-gb.appid.cloud.ibm.com/oauth/v4/c321f792-f62c-42d5-8537-d311f3f69db4/authorization?client_id=ca1b7c1b-4f16-4927-9723-3227a7211f27&amp;response_type=code&amp;redirect_uri=http://localhost:8080/ibm/cloud/appid/callback&amp;scope=appid_default&amp;language=en-US&amp;state=dsy7Vvm73gdwHjHiUoFfSYCjk3c=&amp;language=en-US</h2>
+
+</body>
+</html>

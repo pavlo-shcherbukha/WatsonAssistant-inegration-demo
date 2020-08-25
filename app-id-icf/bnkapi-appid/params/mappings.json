@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "clientId": {
+    "searchPatterns": [
+      "env:clientId",
+      "file:/params/localdev-config.json:$.clientId"
+    ]
+  },
+  "tenantId": {
+    "searchPatterns": [
+      "env:tenantId",
+      "file:/params/localdev-config.json:$.tenantId"
+    ]
+  },
+  "secret": {
+    "searchPatterns": [
+      "env:secret",
+      "file:/params/localdev-config.json:$.secret"
+    ]
+  },
+
+  "usermail": {
+    "searchPatterns": [
+      "env:usermail",
+      "file:/params/localdev-config.json:$.usermail"
+    ]
+  },
+  "userpassword": {
+    "searchPatterns": [
+      "env:userpassword",
+      "file:/params/localdev-config.json:$.userpassword"
+    ]
+  }
+
+}

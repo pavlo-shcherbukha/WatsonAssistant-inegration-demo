@@ -1,0 +1,10 @@
+﻿packages:
+  bankapi-appid:
+    version: 1.0
+    license: Apache-2.0
+    actions:
+      getAuthInfo:
+        function: src/getAuthInfo.js
+        runtime: nodejs
+        inputs:
+          sessionid: "string"

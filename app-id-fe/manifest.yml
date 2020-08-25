@@ -1,0 +1,20 @@
+---
+applications:
+- instances: 1
+  timeout: 180
+  name: wa-auth
+  buildpack: sdk-for-nodejs
+  command: npm start
+  memory: 256M
+  domain: eu-gb.mybluemix.net
+  host: wa-auth
+env:
+  redirectUri: https:
+  clientId: ca
+  tenantId: c3
+  secret: Y2U
+  name: node-app
+  oAuthServerUrl: https://
+  profilesUrl: https://
+  discoveryEndpoint: https://
+  type: regularwebapp

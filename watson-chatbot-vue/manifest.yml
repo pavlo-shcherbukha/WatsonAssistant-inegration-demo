@@ -1,0 +1,13 @@
+---
+applications:
+- instances: 1
+  timeout: 180
+  name: chatbot-ui
+  buildpack: staticfile_buildpack
+  random-route: true
+  memory: 256M
+env:
+  API_KEY: XXXXXXX
+  API_URL: UUUUUUUu
+  NODE_API_URL: ****
+  NODE_ASSISTANT_ID: *****
